@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cnc participants</title>
+    <title>Participant List</title>
     <style>
         table {
             width: 100%;
             border-collapse: collapse;
         }
-        table, th, td {
-            border: 1px solid black;
-        }
         th, td {
             padding: 8px;
             text-align: left;
+            border: 1px solid #ddd;
         }
         th {
             background-color: #f2f2f2;
@@ -22,127 +20,108 @@
     </style>
 </head>
 <body>
-    <h2>CNC workshop participants Details</h2>
+    <h1>Participant List</h1>
     <table>
         <thead>
             <tr>
-                <th>Sr</th>
+                <th>Sr.</th>
                 <th>Name</th>
-                <th>Enroll</th>
+                <th>Enrollment</th>
                 <th>Department</th>
-                <th>Institute Name</th>
+                <th>College</th>
             </tr>
         </thead>
         <tbody id="table-body">
-            <!-- Rows will be inserted dynamically here -->
         </tbody>
     </table>
 
     <script>
-       
-  
-       
         const data = [
-        { sr: 1, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332025' },
-            { sr: 2, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332001' },
-            { sr: 3, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332024' },
-            { sr: 4, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332058' },
-            { sr: 5, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332038' },
-            { sr: 6, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332057' },
-            { sr: 7, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311036' },
-            { sr: 8, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311052' },
-            { sr: 9, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311051' },
-            { sr: 10, name: 'Placeholder', department: 'E.C.', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311061' },
-            { sr: 11, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311050' },
-            { sr: 12, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311017' },
-            { sr: 13, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311022' },
-            { sr: 14, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311032' },
-            { sr: 15, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332054' },
-            { sr: 16, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332045' },
-            { sr: 17, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332084' },
-            { sr: 18, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311049' },
-            { sr: 19, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311024' },
-            { sr: 20, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332049' },
-            { sr: 21, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332043' },
-            { sr: 22, name: 'Placeholder', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332070' },
-            { sr: 23, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332077' },
-            { sr: 24, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332020' },
-            { sr: 25, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332053' },
-            { sr: 26, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332063' },
-            { sr: 27, name: 'Placeholder', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332029' },
-            { sr: 28, name: 'Placeholder', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220470111006' },
-            { sr: 29, name: 'Placeholder', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220470111004' },
-            { sr: 30, name: 'Placeholder', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220470111001' },
-            { sr: 31, name: 'Placeholder', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220470111011' },
-            { sr: 32, name: 'Placeholder', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '22470111018' },
-            { sr: 33, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '236028311002' },
-            { sr: 34, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220470111015' },
-            { sr: 35, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '230203111005' },
-            { sr: 36, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220200111012' },
-            { sr: 37, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220200111015' },
-            { sr: 38, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220200111011' },
-            { sr: 39, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220200111020' },
-            { sr: 40, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '230203111017' },
-            { sr: 41, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '210200111002' },
-            { sr: 42, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '230203111007' },
-            { sr: 43, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220200111010' },
-            { sr: 44, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '230203111015' },
-            { sr: 45, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220200111008' },
-            { sr: 46, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220200111018' },
-            { sr: 47, name: 'Placeholder', department: 'CE', college: 'Government Engineering College Rajkot', enroll: '220200111004' },
-            { sr: 48, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111029' },
-            { sr: 49, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111026' },
-            { sr: 50, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '230203111010' },
-            { sr: 51, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '230203111002' },
-            { sr: 52, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111019' },
-            { sr: 53, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111017' },
-            { sr: 54, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '230203111011' },
-            { sr: 55, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111021' },
-            { sr: 56, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111024' },
-            { sr: 57, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111014' },
-            { sr: 58, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111002' },
-            { sr: 59, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '230203111008' },
-            { sr: 60, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '230203111012' },
-            { sr: 61, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '92100103124' },
-            { sr: 62, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '226020311009' },
-            { sr: 63, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '236028311003' },
-            { sr: 64, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '236028317001' },
-            { sr: 65, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '236028317012' },
-            { sr: 66, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '226020311047' },
-            { sr: 67, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '226020307031' },
-            { sr: 68, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '226020307065' },
-            { sr: 69, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '226020307066' },
-            { sr: 70, name: 'Placeholder', department: 'CE', college: 'Marwadi Engineering College', enroll: '210470107006' },
+            { sr: 1, name: 'Jay Joshi', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332025' },
+            { sr: 2, name: 'Ansari Shakib', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332001' },
+            { sr: 3, name: 'Harsh Hingu', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332024' },
+            { sr: 4, name: 'Shaurya Ranpara', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332058' },
+            { sr: 5, name: 'Parth Makwana', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332038' },
+            { sr: 6, name: 'Priyanshu Vadgama', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332057' },
+            { sr: 7, name: 'Parmar Param M', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311036' },
+            { sr: 8, name: 'Siddhraj Solanki', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311052' },
+            { sr: 9, name: 'Manav Solanki', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311051' },
+            { sr: 10, name: 'Vora Sarth J.', department: 'E.C.', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311061' },
+            { sr: 11, name: 'Sinroja Arjun', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311050' },
+            { sr: 12, name: 'Chudasama Prince Hiteshbhai', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311017' },
+            { sr: 13, name: 'Dodiya Devansh', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311022' },
+            { sr: 14, name: 'Nakum Hardik D', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311032' },
+            { sr: 15, name: 'Vedika Pithadia', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332054' },
+            { sr: 16, name: 'Nishita Trambadia', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332045' },
+            { sr: 17, name: 'Aashtha S Zala', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332084' },
+            { sr: 18, name: 'Kartik Sachania', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311049' },
+            { sr: 19, name: 'Harsh Jasani', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020311024' },
+            { sr: 20, name: 'Harshil Maradia', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332049' },
+            { sr: 21, name: 'Modha Madhav F.', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '236020332043' },
+            { sr: 22, name: 'Bhavik Solanki', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332070' },
+            { sr: 23, name: 'Vaishnani Darshil Dilipbhai', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332077' },
+            { sr: 24, name: 'Gohel Princy', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332020' },
+            { sr: 25, name: 'Janvi Dharmeshbhai Parmar', department: 'ICT', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332053' },
+            { sr: 26, name: 'RATHOD TIRTHRAJ HARIKRUSHNABHAI', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '226020332063' },
+            { sr: 27, name: 'Dhairya Kanani', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '236020332029' },
+            { sr: 28, name: 'Om Doshi', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220470111006' },
+            { sr: 29, name: 'BRIJESH CHAUHAN', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220470111004' },
+            { sr: 30, name: 'Tanish Aghera', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220470111001' },
+            { sr: 31, name: 'Yuvika Narvane', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220470111011' },
+            { sr: 32, name: 'Niraj Umaretiya', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '22470111018' },
+            { sr: 33, name: 'Shyam Chavda', department: 'CE', college: 'Marwadi Engineering College', enroll: '236028311002' },
+            { sr: 34, name: 'Shashwat Mehta', department: 'CE', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '220470111015' },
+            { sr: 35, name: 'Dudhaiya Rishita', department: 'CE', college: 'Marwadi Engineering College', enroll: '230203111005' },
+            { sr: 36, name: 'Muliya Chirag Laljibhai', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '220200111012' },
+            { sr: 37, name: 'Rishit Bakulbhai Panchasara', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '220200111015' },
+            { sr: 38, name: 'Gresee Shaileshbhai Meghpara', department: 'CE', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '220200111011' },
+            { sr: 39, name: 'Hamesha Sakariya', department: 'CE', college: 'Marwadi Engineering College', enroll: '220200111020' },
+            { sr: 40, name: 'Sheth Ruchit Jayendrabhai', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '230203111017' },
+            { sr: 41, name: 'Ladava Sagar Vinodbhai', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '210200111002' },
+            { sr: 42, name: 'Joshi Harshal Amitbhai', department: 'EC', college: 'Marwadi Engineering College', enroll: '230203111007' },
+            { sr: 43, name: 'Mansara Ravi P.', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220200111010' },
+            { sr: 44, name: 'Rohit Prajapati', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '230203111015' },
+            { sr: 45, name: 'Nevil Mandora', department: 'CE', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '220200111008' },
+            { sr: 46, name: 'Meet Sagpariya', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '220200111018' },
+            { sr: 47, name: 'Hitenkumar Karena', department: 'EC', college: 'Marwadi Engineering College', enroll: '220200111004' },
+            { sr: 48, name: 'Karan Zala', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '220200111029' },
+            { sr: 49, name: 'Vinisha Pithadia', department: 'EC', college: 'Marwadi Engineering College', enroll: '220200111026' },
+            { sr: 50, name: 'Kihor Shivam Kishorbhai', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '230203111010' },
+            { sr: 51, name: 'Bhatt Uday Prafulbhai', department: 'EC', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '230203111002' },
+            { sr: 52, name: 'Archana Sahani', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '220200111019' },
+            { sr: 53, name: 'Ranjan Rai', department: 'CE', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '220200111017' },
+            { sr: 54, name: 'Manav Roy', department: 'CE', college: 'Marwadi Engineering College', enroll: '230203111011' },
+            { sr: 55, name: 'Prakash Sharma', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '220200111021' },
+            { sr: 56, name: 'Ayush Ajay Kumar Singh', department: 'CE', college: 'A. V. Parekh Technical Institute Rajkot', enroll: '220200111024' },
+            { sr: 57, name: 'Jyoti Pal', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '220200111014' },
+            { sr: 58, name: 'Harsh Galathiya', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '220200111002' },
+            { sr: 59, name: 'Neha Kandoliya', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '230203111008' },
+            { sr: 60, name: 'Nadiyapara Vaibhav', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '230203111012' },
+            { sr: 61, name: 'Anjali Chauhan', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '92100103124' },
+            { sr: 62, name: 'Bhutiya Harshit S.', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '226020311009' },
+            { sr: 63, name: 'Parmar Dhrruv', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '236028311003' },
+            { sr: 64, name: 'Baloch Asnadkhan', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '236028317001' },
+            { sr: 65, name: 'Gohel Yash', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '236028317012' },
+            { sr: 66, name: 'Rathod Meet', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '226020311047' },
+            { sr: 67, name: 'Chauhan Jaivik', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '226020307031' },
+            { sr: 68, name: 'Gajera Yash', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '226020307065' },
+            { sr: 69, name: 'Gamdha Dhruv', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '226020307066' },
+            { sr: 70, name: 'Vyas Vishwas', department: 'EC', college: 'V. V. P. Engineering College Rajkot', enroll: '210470107006' }
         ];
 
+        const tableBody = document.getElementById('table-body');
 
-
-
-
-    
-    
-    console.log(data);
-    
-
-    
-    
-    
-    
-    const tbody = document.getElementById('table-body');
-
-    // Dynamically create table rows
-    data.forEach((student) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${student.sr}</td>
-            <td>${student.name}</td>
-            <td>${student.enroll}</td>
-            <td>${student.department}</td>
-            <td>${student.institute}</td>
-        `;
-        tbody.appendChild(row);
-    });    
-        
+        data.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.sr}</td>
+                <td>${entry.name}</td>
+                <td>${entry.enroll}</td>
+                <td>${entry.department}</td>
+                <td>${entry.college}</td>
+            `;
+            tableBody.appendChild(row);
+        });
     </script>
 </body>
 </html>
