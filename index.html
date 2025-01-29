@@ -59,7 +59,7 @@
     </table>
 
     <script>
-       
+        // ✅ Fixed Data: Added "college" field correctly in both datasets
         const data1 = [
         { sr: 1, name: "Rathod Chirag Laljibhai"
         , enroll: "226020309079", department: "Electrical",  college: "A .V Parekh Technical Institute , Rajkot"},
@@ -218,7 +218,39 @@
     { sr: 75, name:"Gadhavi Ronak M."
         , enroll: "236020309037", department: "Electrical", college: "A .V Parekh Technical Institute , Rajkot" },
     { sr: 76, name: "Mungara Sahil N.",
-         enroll: "236020309092", department: "Electrical", college: "A .V Parekh Technical Institute , Rajkot"}
+         enroll: "236020309092", department: "Electrical", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 77, name: "Chaitnay Thakar",
+         enroll: "226020307206", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 78, name: "Misri Lakhani",
+         enroll: "226020307121", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 79, name: "Solanki Priyanshi",
+         enroll: "226020307196", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 80, name: "Thakar Jeet",
+         enroll: "226020307208", department: "Electrical", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 81, name: "Kacha Sarang",
+         enroll: "236020307077", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 82, name: "Matari Arhanahmed",
+         enroll: "236020307121", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 83, name: "Archiv vithlani",
+         enroll: "236020307005", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 84, name: "Tulja Dhabalia ",
+         enroll: "246020307211", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 85, name: "Vini Ashra",
+         enroll: "246020307231", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 86, name: "Chauhan Vishwa",
+         enroll: "236020307028", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 87, name: "Oza Bhavyaa",
+         enroll: "246020307138", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 88, name: "Patadiya Drashty",
+         enroll: "246020307157", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 89, name: "Tanisha Rathod",
+         enroll: "236020307177", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 90, name: "Helly sureja",
+         enroll: "236020307205", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+         { sr: 91, name: "Janvi pithadiya",
+         enroll: "226020307150", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"}
+
+
         ];
 
         const data2 = [
@@ -291,7 +323,44 @@
         { sr: 67, name: 'Chauhan Jaivik', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '226020307031' },
         { sr: 68, name: 'Gajera Yash', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '226020307065' },
         { sr: 69, name: 'Gamdha Dhruv', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '226020307066' },
-        { sr: 70, name: 'Vyas Vishwas', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '210470107006' }
+        { sr: 70, name: 'Vyas Vishwas', department: 'CE', college: 'V. V. P. Engineering College Rajkot', enroll: '210470107006' },
+        { sr: 71, name: "Chaitnay Thakar",
+        enroll: "226020307206", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 72, name: "Misri Lakhani",
+        enroll: "226020307121", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 73, name: "Solanki Priyanshi",
+        enroll:"226020307196", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 74, name: "Thakar Jeet",
+        enroll: "226020307208", department: "Electrical", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 75, name: "Kacha Sarang",
+        enroll: "236020307077", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 76, name: "Matari Arhanahmed",
+        enroll: "236020307121", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 77, name: "Archiv vithlani",
+        enroll: "236020307005", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 78, name: "Tulja Dhabalia ",
+        enroll: "246020307211", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 79, name: "Vini Ashra",
+        enroll: "246020307231", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 80, name: "Chauhan Vishwa",
+        enroll: "236020307028", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 81, name: "Oza Bhavyaa",
+        enroll: "246020307138", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 82, name: "Patadiya Drashty",
+        enroll:"246020307157", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 83, name: "Tanisha Rathod",
+        enroll: "236020307177", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 84, name: "Helly sureja",
+        enroll: "236020307205", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 85, name: "Janvi pithadiya",
+        enroll: "226020307150", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+        { sr: 85, name: "Pandya shraddha",
+        enroll: "246020307144", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"},
+
+        { sr: 85, name: "Shah stuti",
+        enroll: "246020307191", department: "CE", college: "A .V Parekh Technical Institute , Rajkot"}
+
+
     ];
 
         
@@ -307,7 +376,7 @@
                     <td>${entry.name}</td>
                     <td>${entry.enroll}</td>
                     <td>${entry.department}</td>
-                    <td>${entry.college}</td>  
+                    <td>${entry.college}</td>  <!-- ✅ Fixed: Correct key used here -->
                 `;
                 tableBody.appendChild(row);
             });
@@ -336,7 +405,7 @@
             }
         }
 
-       
+        // ✅ Populate both tables correctly
         populateTable('table-body1', data1);
         populateTable('table-body2', data2);
     </script>
